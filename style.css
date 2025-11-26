@@ -1,6 +1,4 @@
-/* ================================
-   CONFIGURAÇÃO GERAL DO SITE
-==================================*/
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -10,40 +8,33 @@
 body {
     background: #111;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    overflow-x: hidden;
+    font-family: Arial, sans-serif;
 }
 
-/* ================================
-   CABEÇALHO
-==================================*/
+/* CABEÇALHO */
 header {
     background: #000;
     padding: 15px;
+    text-align: center;
     font-size: 28px;
-    font-weight: bold;
-    letter-spacing: 1px;
 }
 
-/* ================================
-   MENU CENTRAL NA HOME
-==================================*/
+/* MENU CENTRAL */
 .menu {
     position: absolute;
-    top: 55%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     gap: 20px;
-    z-index: 10;
+    z-index: 20;
 }
 
 .btn {
-    background: rgba(34,34,34,0.85);
+    background: rgba(34, 34, 34, 0.8);
     padding: 14px 35px;
-    color: #fff;
+    color: white;
     border-radius: 10px;
     text-decoration: none;
     font-size: 20px;
@@ -51,72 +42,11 @@ header {
     text-align: center;
     border: 1px solid #555;
     backdrop-filter: blur(4px);
-    transition: 0.3s ease-in-out;
+    transition: 0.3s ease;
 }
 
 .btn:hover {
-    background: rgba(255,215,0,0.85);
+    background: rgba(255, 215, 0, 0.85);
     color: #000;
     transform: scale(1.05);
-}
-
-/* ================================
-   PÁGINAS INTERNAS (galeria, sobre, produtos)
-==================================*/
-
-.page-content {
-    padding: 40px 20px;
-}
-
-.page-content h1 {
-    margin-bottom: 20px;
-    font-size: 32px;
-}
-
-.page-content p {
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* ================================
-   GALERIA
-==================================*/
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    height: 200px;
-    transition: 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* ================================
-   RESPONSIVIDADE
-==================================*/
-@media (max-width: 768px) {
-    .menu {
-        top: 60%;
-        gap: 15px;
-    }
-
-    .btn {
-        width: 180px;
-        font-size: 18px;
-    }
-
-    header {
-        font-size: 24px;
-    }
 }
