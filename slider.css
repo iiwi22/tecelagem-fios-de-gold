@@ -8,27 +8,32 @@
 
 .slides {
     display: flex;
-    width: 500%;
+    width: 500%; /* 5 imagens → ajuste conforme a sua quantidade */
     height: 100%;
-    animation: slide 20s infinite linear;
+    animation: slide 35s infinite ease-in-out; /* MAIS LENTO E SUAVE */
 }
 
 .slides img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;      /* Mantém proporção sem deformar */
+    object-position: center; /* Centraliza a imagem */
 }
 
-/* ANIMAÇÃO DO SLIDER */
+/* ANIMAÇÃO DO SLIDER (SUAVIZADA E MAIS LENTA) */
 @keyframes slide {
     0%   { transform: translateX(0); }
-    20%  { transform: translateX(0); }
-    25%  { transform: translateX(-100%); }
-    40%  { transform: translateX(-100%); }
-    45%  { transform: translateX(-200%); }
-    60%  { transform: translateX(-200%); }
-    65%  { transform: translateX(-300%); }
-    80%  { transform: translateX(-300%); }
-    85%  { transform: translateX(-400%); }
+    18%  { transform: translateX(0); }
+
+    20%  { transform: translateX(-100%); }
+    38%  { transform: translateX(-100%); }
+
+    40%  { transform: translateX(-200%); }
+    58%  { transform: translateX(-200%); }
+
+    60%  { transform: translateX(-300%); }
+    78%  { transform: translateX(-300%); }
+
+    80%  { transform: translateX(-400%); }
     100% { transform: translateX(-400%); }
 }
