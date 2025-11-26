@@ -1,43 +1,37 @@
-/* SLIDER DE IMAGENS EM LOOP */
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    overflow: hidden;
-    background: #000;
-    font-family: Arial, sans-serif;
+body, html {
+    margin: 0;
+    padding: 0;
 }
 
-/* Área total do slider */
 .slider {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100vh;
+    height: 40vh;
     overflow: hidden;
-    z-index: -1;
+    position: relative;
 }
 
-/* Container horizontal das imagens */
 .slides {
     display: flex;
-    width: calc(100% * 5);
-    animation: slide 25s linear infinite;
+    width: 500%;
+    height: 100%;
+    animation: slide 20s infinite;
 }
 
-/* Imagens */
 .slides img {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
 }
 
 @keyframes slide {
-    0%   { transform: translateX(0); }
-    20%  { transform: translateX(-100%); }
-    40%  { transform: translateX(-200%); }
-    60%  { transform: translateX(-300%); }
-    80%  { transform: translateX(-400%); }
-    100% { transform: translateX(0); }
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    40% { transform: translateX(-100%); }
+    45% { transform: translateX(-200%); }
+    60% { transform: translateX(-200%); }
+    65% { transform: translateX(-300%); }
+    80% { transform: translateX(-300%); }
+    85% { transform: translateX(-400%); }
+    100% { transform: translateX(-400%); }
 }
