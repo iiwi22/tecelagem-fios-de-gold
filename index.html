@@ -8,98 +8,188 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #f8f5f0;
+            background-color: #f7f5ef;
             color: #333;
+            overflow-x: hidden;
         }
-        header {
-            background: #d4af37;
+
+        /* HERO COM SLIDER EM LOOP */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slideLoop 18s infinite linear;
+        }
+
+        .slides img {
+            width: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        @keyframes slideLoop {
+            0% { transform: translateX(0%); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0%); }
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             color: white;
-            padding: 40px;
             text-align: center;
+            font-size: 2rem;
+            text-shadow: 0 0 10px black;
         }
+
+        /* MENU FIXO NO TOPO */
         nav {
-            background: #222;
+            background: #221f1d;
             padding: 15px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
+
         nav a {
             color: #d4af37;
-            text-decoration: none;
             margin: 0 15px;
+            text-decoration: none;
             font-weight: bold;
+            font-size: 1.1rem;
         }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
+
+        nav a:hover {
+            color: white;
         }
+
+        /* SEÇÕES EM DIAGONAL */
+        .section {
+            padding: 100px 40px;
+            transform: skewY(-4deg);
+            margin: 0;
+        }
+
+        .section-content {
+            transform: skewY(4deg);
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .gold {
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: white;
+        }
+
+        .light {
+            background: #f0ebe0;
+        }
+
         .section h2 {
-            color: #b8860b;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
         }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* GALERIA COM IMAGENS REAIS */
         .galeria {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
+            margin-top: 20px;
         }
+
         .galeria img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
             border-radius: 8px;
         }
+
         footer {
-            background: #222;
+            background: #221f1d;
             color: #d4af37;
-            padding: 20px;
             text-align: center;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Tecelagem Fios de Ouro</h1>
-    <p>Tradição e qualidade na arte de tecer</p>
-</header>
-
-<nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#produtos">Produtos</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#contato">Contato</a>
-</nav>
-
-<div class="container">
-
-<section class="section" id="sobre">
-    <h2>Sobre Nós</h2>
-    <p>A Tecelagem Fios de Ouro produz tecidos premium combinando técnicas tradicionais com tecnologia moderna.</p>
-</section>
-
-<section class="section" id="produtos">
-    <h2>Nossos Produtos</h2>
-    <p>Mantas, tapetes, roupas e peças decorativas artesanais com fios especiais e acabamentos refinados.</p>
-</section>
-
-<section class="section" id="galeria">
-    <h2>Galeria</h2>
-    <div class="galeria">
-        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e" />
-        <img src="https://images.unsplash.com/photo-1522336572468-97b06e8ef143" />
-        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4" />
+    <!-- HERO COM SLIDES AUTOMÁTICOS → URDIDURA / TECELAGEM / FIOS -->
+    <div class="hero">
+        <div class="slides">
+            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e" alt="Tear artesanal" />
+            <img src="https://images.unsplash.com/photo-1581091215367-59ab6c1d3c16" alt="Fios e urdideira" />
+            <img src="https://images.unsplash.com/photo-1608571423902-eed4d25fe37b" alt="Tecelagem profissional" />
+        </div>
+        <div class="hero-text">Tecelagem Fios de Ouro – Tradição e excelência</div>
     </div>
-</section>
 
-<section class="section" id="contato">
-    <h2>Contato</h2>
-    <p>Email: contato@fiosdeouro.com.br<br>Telefone: (11) 99999-9999</p>
-</section>
+    <!-- MENU SUPERIOR -->
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+    </nav>
 
-</div>
+    <!-- SEÇÕES EM DIAGONAL -->
+    <section class="section light" id="sobre">
+        <div class="section-content">
+            <h2>Sobre Nós</h2>
+            <p>A Tecelagem Fios de Ouro combina técnicas tradicionais com inovação moderna para criar tecidos premium. Nossa especialidade inclui processos de urdideira, teares artesanais e máquinas industriais avançadas.</p>
+        </div>
+    </section>
 
-<footer>
-    © 2025 Tecelagem Fios de Ouro
-</footer>
+    <section class="section gold" id="produtos">
+        <div class="section-content">
+            <h2>Nossos Produtos</h2>
+            <p>Tapetes, mantas, roupas e peças decorativas tecidas com fios de alta resistência e acabamento refinado. Cada peça possui identidade única, inspirada no trabalho manual da tecelagem real.</p>
+        </div>
+    </section>
+
+    <section class="section light" id="galeria">
+        <div class="section-content">
+            <h2>Galeria</h2>
+            <div class="galeria">
+                <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4" alt="Fios de urdideira" />
+                <img src="https://images.unsplash.com/photo-1479064555552-3ef4979f8908" alt="Tear artesanal" />
+                <img src="https://images.unsplash.com/photo-1522336572468-97b06e8ef143" alt="Tecidos" />
+                <img src="https://images.unsplash.com/photo-1608571423902-eed4d25fe37b" alt="Máquinas de tecelagem" />
+            </div>
+        </div>
+    </section>
+
+    <section class="section gold" id="contato">
+        <div class="section-content">
+            <h2>Contato</h2>
+            <p>
+                Email: contato@fiosdeouro.com.br<br>
+                Telefone: (11) 99999-9999<br>
+                Endereço: Rua da Indústria Têxtil, 120 – São Paulo/SP
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 Tecelagem Fios de Ouro – Todos os direitos reservados.
+    </footer>
 
 </body>
 </html>
