@@ -1,11 +1,7 @@
-body, html {
-    margin: 0;
-    padding: 0;
-}
-
+/* SLIDER PRINCIPAL */
 .slider {
     width: 100%;
-    height: 40vh;
+    height: 60vh;
     overflow: hidden;
     position: relative;
 }
@@ -14,7 +10,7 @@ body, html {
     display: flex;
     width: 500%;
     height: 100%;
-    animation: slide 20s infinite;
+    animation: slide 20s infinite linear;
 }
 
 .slides img {
@@ -23,15 +19,16 @@ body, html {
     object-fit: cover;
 }
 
+/* ANIMAÇÃO DO SLIDER */
 @keyframes slide {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    40% { transform: translateX(-100%); }
-    45% { transform: translateX(-200%); }
-    60% { transform: translateX(-200%); }
-    65% { transform: translateX(-300%); }
-    80% { transform: translateX(-300%); }
-    85% { transform: translateX(-400%); }
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(0); }
+    25%  { transform: translateX(-100%); }
+    40%  { transform: translateX(-100%); }
+    45%  { transform: translateX(-200%); }
+    60%  { transform: translateX(-200%); }
+    65%  { transform: translateX(-300%); }
+    80%  { transform: translateX(-300%); }
+    85%  { transform: translateX(-400%); }
     100% { transform: translateX(-400%); }
 }
