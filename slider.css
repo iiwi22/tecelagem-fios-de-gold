@@ -1,23 +1,43 @@
-.slider {
-    width: 100%;
+/* SLIDER DE IMAGENS EM LOOP */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
     overflow: hidden;
-    height: 300px;
+    background: #000;
+    font-family: Arial, sans-serif;
 }
 
+/* Área total do slider */
+.slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Container horizontal das imagens */
 .slides {
     display: flex;
-    width: 300%;
-    animation: slide 12s infinite;
+    width: calc(100% * 5);
+    animation: slide 25s linear infinite;
 }
 
+/* Imagens */
 .slides img {
     width: 100%;
+    height: 100vh;
     object-fit: cover;
 }
 
 @keyframes slide {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-100%); }
-    66% { transform: translateX(-200%); }
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(-100%); }
+    40%  { transform: translateX(-200%); }
+    60%  { transform: translateX(-300%); }
+    80%  { transform: translateX(-400%); }
     100% { transform: translateX(0); }
 }
