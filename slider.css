@@ -1,0 +1,27 @@
+/* SLIDER HORIZONTAL INFINITO */
+.slider {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(300px * 20);
+    animation: scroll 60s linear infinite;
+}
+
+.slider img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    min-width: 100vw;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
